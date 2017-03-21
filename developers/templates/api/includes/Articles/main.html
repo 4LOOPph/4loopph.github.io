@@ -1,0 +1,20 @@
+<div class="method">
+    <h4 class="expandable" ng-class="{'expanded': apiGETArticleInfo}">
+        <span class="left">
+        <button class="expand"></button>
+        <a href="" ng-click="apiGETArticleInfo = !apiGETArticleInfo">Get Articles</a></span><code>GET&nbsp;/api/1.0/articleinfo</code>
+    </h4>
+    <div class="method-body" uib-collapse="!apiGETArticleInfo">
+        <ng-include src="'./templates/api/includes/Articles/getArticleInfo.html'"></ng-include>
+    </div>
+</div>
+<div class="method">
+    <h4 class="expandable" ng-class="{'expanded': apiPOSTArticleInfo}">
+        <span class="left">
+        <button class="expand"></button>
+        <a href="" ng-click="apiPOSTArticleInfo = !apiPOSTArticleInfo">Create Article</a></span><code>POST&nbsp;/api/1.0/articleinfo</code>
+    </h4>
+    <div class="method-body" uib-collapse="!apiPOSTArticleInfo">
+        <ng-include src="'./templates/api/includes/Articles/postArticleInfo.html'"></ng-include>
+    </div>
+</div>

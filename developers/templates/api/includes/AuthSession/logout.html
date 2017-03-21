@@ -1,0 +1,35 @@
+<p>
+    Logs the current user out of Symphony, destroying the existing session, if any.
+</p>
+<h5>Responses</h5>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-success">Status 200</b>
+        <div class="representation-doc">
+            Returned if the user was successfully logged out.
+            <div class="representation-doc-block">
+                <p></p>
+<pre><code class="hljs json">{
+  "response": {
+    "msg": "User successfully logout",
+    "success": true,
+    "result": null
+  },
+  "statusCode": 200
+}</code>
+</pre>
+            </div>
+        </div>
+    </li>
+</ul>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-error">Status 401</b>
+        <div class="representation-doc">
+            Returned if the user was successfully authenticated.
+        </div>
+    </li>
+</ul>
+<!-- FIXED RESPONSE -->
+<!-- <api-response></api-response> -->
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Style</h2>
+            <ol class="breadcrumb">
+                <li><a ui-sref="design">Design</a>
+                </li>
+                <li class="active">Style</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="" class="list-group-item" ng-class="{'active': color}" ng-click="showDisplay('color')">Color</a>
+                <a href="" class="list-group-item" ng-class="{'active': icons}" ng-click="showDisplay('icons')">Icons</a>
+                <a href="" class="list-group-item" ng-class="{'active': imagery}">Imagery</a>
+                <a href="" class="list-group-item" ng-class="{'active': typography}">Typography</a>
+            </div>
+        </div>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div ng-include="'./templates/designs/style-color.html'" ng-show="color"></div>
+            <!-- <div ng-include="'./templates/designs/layout-icons.html'" ng-show="icons"></div> -->
+        </div>
+    </div>
+</div>

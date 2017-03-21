@@ -1,0 +1,30 @@
+<div class="method">
+    <h4 class="expandable" ng-class="{'expanded': apiPOSTSessionLogin}">
+        <span class="left">
+        <button class="expand"></button>
+        <a href="" ng-click="apiPOSTSessionLogin = !apiPOSTSessionLogin">Login</a></span><code>POST&nbsp;/api/1.0/session</code>
+    </h4>
+    <div class="method-body" uib-collapse="!apiPOSTSessionLogin">
+        <ng-include src="'./templates/api/includes/AuthSession/login.html'"></ng-include>
+    </div>
+</div>
+<div class="method">
+    <h4 class="expandable" ng-class="{'expanded': apiDELETESessionLogin}">
+        <span class="left">
+        <button class="expand"></button>
+        <a href="" ng-click="apiDELETESessionLogin = !apiDELETESessionLogin">Logout</a></span><code>DELETE&nbsp;/api/1.0/session</code>
+    </h4>
+    <div class="method-body" uib-collapse="!apiDELETESessionLogin">
+        <ng-include src="'./templates/api/includes/AuthSession/logout.html'"></ng-include>
+    </div>
+</div>
+<div class="method">
+    <h4 class="expandable" ng-class="{'expanded': apiGETSessionLogin}">
+        <span class="left">
+        <button class="expand"></button>
+        <a href="" ng-click="apiGETSessionLogin = !apiGETSessionLogin">Current User</a></span><code>GET&nbsp;/api/1.0/session</code>
+    </h4>
+    <div class="method-body" uib-collapse="!apiGETSessionLogin">
+        <ng-include src="'./templates/api/includes/AuthSession/currentUser.html'"></ng-include>
+    </div>
+</div>

@@ -1,0 +1,352 @@
+<div class="container">
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Web Tracking
+                    <small>Measure user interaction with websites or web applications.</small>
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="" class="list-group-item" ui-sref="frontier-web">Overview</a>
+                <a href="" class="list-group-item" ui-sref="frontier-web-install">Install</a>
+                <a href="" class="list-group-item active" ui-sref="frontier-web-native">Native JS</a>
+                <a href="" class="list-group-item" ui-sref="frontier-web-angular">Angular JS</a>
+            </div>
+        </div>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <h1>
+            <img src="./images/frontier/js.png" width="93px" height="98px">
+                Native JS Overview
+            </h1>
+            <hr>
+            <h5>Features</h5>
+            <ul>
+                <li>highly configurable</li>
+                <li>page tracking</li>
+                <li>event tracking</li>
+                <li>view / screen tracking</li>
+                <li>app tracking</li>
+                <li>device tracking</li>
+                <li>cross-domain support</li>
+                <li>hybrid mobile application support</li>
+                <li>analytics.js advanced debugging support</li>
+            </ul>
+            <h5>Initialization</h5>
+            <p>If you use Jquery, in your '$( document ).ready()' handler, set up your Frontier tracker:</p>
+            <pre class="well">
+$(document).ready(function() {
+    window.Frontier.Initialize({ 
+        accessCode: 'XXXXXXXXXXXXXXX',
+        trackerName: 'tracker-name',
+        encoding: 'utf-8'
+    });
+});
+</pre>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Value Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="active">
+                            <th>accessCode</th>
+                            <td>text</td>
+                            <td>yes</td>
+                            <td>Symphony Access Code base on your subscription</td>
+                        </tr>
+                        <tr class="active">
+                            <th>trackerName</th>
+                            <td>text</td>
+                            <td>yes</td>
+                            <td>Name of the tracker object.</td>
+                        </tr>
+                        <tr class="active">
+                            <th>encoding</th>
+                            <td>text</td>
+                            <td>no</td>
+                            <td>Specifies the character set used to encode the page / document. This field is initialized by the create command.</td>
+                        </tr>
+                        <tr class="active">
+                            <th>userId</th>
+                            <td>text</td>
+                            <td>no</td>
+                            <td>This is intended to be a known identifier for a user provided by the site owner/tracking library user.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <h5>To track a Screen (View)</h5>
+            <pre class="well">
+window.Frontier.screenTrack({
+    screenName:'Screen Title'
+});
+</pre>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Value Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="active">
+                            <th>screenName</th>
+                            <td>text</td>
+                            <td>yes</td>
+                            <td>The name of the screen.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <h5>To track an Event:</h5>
+            <pre class="well">
+window.Frontier.eventTrack({
+    eventCategory:'Category', 
+    eventAction:'Action', 
+    eventLabel:'Label', 
+    eventValue:'Value'
+});
+</pre>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Value Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="active">
+                            <th>eventCategory</th>
+                            <td>text</td>
+                            <td>yes</td>
+                            <td>Typically the object that was interacted with (e.g. 'Video')</td>
+                        </tr>
+                        <tr class="active">
+                            <th>eventAction</th>
+                            <td>text</td>
+                            <td>yes</td>
+                            <td>The type of interaction (e.g. 'play' / 'click')</td>
+                        </tr>
+                        <tr class="active">
+                            <th>eventLabel</th>
+                            <td>text</td>
+                            <td>no</td>
+                            <td>Useful for categorizing events (e.g. 'Fall Campaign')</td>
+                        </tr>
+                        <tr class="active">
+                            <th>eventValue</th>
+                            <td>text</td>
+                            <td>no</td>
+                            <td>any value</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <h5>To track a Page</h5>
+            <pre class="well">
+window.Frontier.pageTrack({
+    title:'Page Title', 
+    location:'Page URL',
+    page:'Page'
+});
+</pre>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Value Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="active">
+                            <th>title</th>
+                            <td>text</td>
+                            <td>yes</td>
+                            <td>The title of the page (e.g. homepage)</td>
+                        </tr>
+                        <tr class="active">
+                            <th>location</th>
+                            <td>text</td>
+                            <td>no</td>
+                            <td>URL of the page being tracked.</td>
+                        </tr>
+                        <tr class="active">
+                            <th>page</th>
+                            <td>text</td>
+                            <td>no</td>
+                            <td>The path portion of a URL. This value should start with a slash (/) character</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <h5>To track an App</h5>
+            <pre class="well">
+window.Frontier.appTrack({
+    appName: 'myAppName', 
+    appID: 'XXXX-YYY-ZZZ',
+    appVersion:'1.0.0',
+    appInstallerID: 'XXX-YY-1.0.0'
+});
+</pre>
+            <p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Value Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="active">
+                            <th>appName</th>
+                            <td>text</td>
+                            <td>yes</td>
+                            <td>The name of the application.</td>
+                        </tr>
+                        <tr class="active">
+                            <th>appId</th>
+                            <td>text</td>
+                            <td>no</td>
+                            <td>The Id of the application.</td>
+                        </tr>
+                        <tr class="active">
+                            <th>appVersion</th>
+                            <td>text</td>
+                            <td>no</td>
+                            <td>The application version.</td>
+                        </tr>
+                        <tr class="active">
+                            <th>appInstallerId</th>
+                            <td>text</td>
+                            <td>no</td>
+                            <td>The Id of the application installer.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+            <h5>To track a Device</h5>
+            <pre class="well">
+window.Frontier.deviceTrack({
+    deviceID:'deviceID',
+    deviceName:'deviceName', 
+    deviceBrand:'deviceBrand',
+    deviceModel:'deviceModel',
+    osName:'osName',
+    osVersion:'osVersion',
+    screenResolution:'screenResolution',
+    serviceProvider:'serviceProvider'
+});
+</pre>
+            <h5>To set a UserId:</h5>
+            <pre class="well">
+window.Frontier.setUserId('my-user-id');
+</pre>
+            <h5>To enable verbose logging</h5>
+            <pre class="well">
+window.Frontier.enableAppDebugging(true);
+</pre>
+            <p>set <b>true</b> to enable debugging mode, default: <b>false</b></p>
+            <h5>To enable Event Tracking</h5>
+            <pre class="well">
+window.Frontier.enableTrackEvent(true);
+</pre>
+            <p>set <b>true</b> to enable Event Tracking, default: <b>false</b></p>
+            <h5>To enable Page Tracking</h5>
+            <pre class="well">
+window.Frontier.enableTrackPage(true);
+</pre>
+            <p>set <b>true</b> to enable Page Tracking, default: <b>false</b></p>
+            <h5>To enable View / Screen Tracking</h5>
+            <pre class="well">
+window.Frontier.enableTrackView(true);
+</pre>
+            <p>set <b>true</b> to enable View / Screen Tracking, default: <b>false</b></p>
+            <h5>To enable App Tracking</h5>
+            <pre class="well">
+window.Frontier.enableTrackApp(true);
+</pre>
+            <p>set <b>true</b> to enable App Tracking, default: <b>false</b></p>
+            <h5>To get View Port Size</h5>
+            <pre class="well">
+window.Frontier.getViewPortSize();
+</pre>
+            <h5>To get Screen Resolution:</h5>
+            <pre class="well">
+window.Frontier.getScreenResolution();
+</pre>
+            <h5>To get Screen Color Depth:</h5>
+            <pre class="well">
+window.Frontier.getScreenColorDepth();
+</pre>
+            <h5>To get Language</h5>
+            <pre class="well">
+window.Frontier.getLanguage();
+</pre>
+            <h5>To get Operating System Info:</h5>
+            <pre class="well">
+window.Frontier.getOperatingSystem();
+</pre>
+            <h5>To get Operating System Version:</h5>
+            <pre class="well">
+window.Frontier.getOperatingSystemVersion();
+</pre>
+            <h5>To get Device Unique ID</h5>
+            <pre class="well">
+window.Frontier.getDeviceID();
+</pre>
+            <h5>To get Device Name:</h5>
+            <pre class="well">
+window.Frontier.getDeviceName();
+</pre>
+            <h5>To get Device Model</h5>
+            <pre class="well">
+window.Frontier.getDeviceModel();
+</pre>
+            <h5>To get Device Brand:</h5>
+            <pre class="well">
+window.Frontier.getDeviceBrand();
+</pre>
+            <h5>To get App ID:</h5>
+            <pre class="well">
+window.Frontier.getAppID();
+</pre>
+            <h5>To get App Name</h5>
+            <pre class="well">
+window.Frontier.getAppName();
+</pre>
+            <h5>To get App Version</h5>
+            <pre class="well">
+window.Frontier.getAppVersion();
+</pre>
+            <h5>To get / check if Frontier is initialized</h5>
+            <pre class="well">
+window.Frontier.getInitialized();
+</pre>
+        </div>
+    </div>
+    <!-- /.row -->
+    <hr>
+</div>

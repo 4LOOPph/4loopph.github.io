@@ -1,0 +1,131 @@
+<p>
+    Returns information about the currently authenticated user's session. If the caller is not authenticated they will get a 401 Unauthorized status code.
+</p>
+<p>
+    Note that it is generally preferrable to use HTTP BASIC authentication with the REST API. However, this resource may be used to mimic the behaviour of SYMPHONY's log-in page (e.g. to display log-in errors to a user).
+</p>
+<h5>Responses</h5>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-success">Status 200</b>
+        
+        <div class="representation-doc">
+            Returns information about the user's session if the user is authenticated.
+            <div class="representation-doc-block">
+                <p></p>
+                <h6>Example</h6>
+<pre><code class="hljs json">{
+  "response": {
+    "success": true,
+    "msg": "",
+    "result": {
+      "uc_id": 16,
+      "username": "TESSA LASTNAME",
+      "valid_until": null,
+      "effective_date": "2016-06-21T20:03:21.000Z",
+      "role_id": "",
+      "EmpName": "Credit Union, Holiday Coast",
+      "isActive": 1,
+      "StoreInfo": null,
+      "isOwner": 1,
+      "date_created": "2016-06-21T20:03:21.000Z",
+      "date_updated": null,
+      "profile": {
+        "person_id": 34,
+        "lastname": "Credit Union",
+        "firstname": "Holiday Coast",
+        "isActive": 1,
+        "store_id": null,
+        "image": "http://54.206.38.223:5001/null",
+        "mobile": null,
+        "address": "Westfield Burwood,Shop 323, Level 2, 100 Burwood Road Westfield Burwood,",
+        "address2": null,
+        "email": "inquiry@hccu.com.au",
+        "displayName": "Holiday Coast Credit Union",
+        "timeZone": "AUS Eastern Standard Time",
+        "locale": null,
+        "avatarUrls": null,
+        "per_type_id": 2,
+        "country": "Australia",
+        "state": "Building 1 301 Burwood Highway",
+        "city": "Burwood VIC",
+        "zipcode": "3125",
+        "isSubscriber": 0,
+        "date_start": null,
+        "date_end": null,
+        "date_created": "2016-06-21T20:03:21.000Z",
+        "_id": "bd13631c-38f8-11e6-b95a-38c98626bd93",
+        "company_id": null,
+        "person_type": "Customer"
+      },
+      "subscriptions": [
+        {
+          "sub_id": 12,
+          "sr_id": 6,
+          "person_id": 34,
+          "uc_id": 16,
+          "company_name": "TESSA",
+          "subscriptionKey": "jeJMH2vWAQocOrat0bu1yqLJg1X0xdYZ"
+        }
+      ]
+    }
+  },
+  "statusCode": 200
+}</code>
+</pre>
+            </div>
+        </div>
+    </li>
+</ul>
+<!-- FIXED RESPONSE -->
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-error">Status 400 </span></b>
+        </span>
+        <div class="representation-doc">
+            <b>Bad Request</b> - Request does not have a valid format, all required parameters, etc.
+            <div class="representation-doc-block">
+                <p></p>
+                <pre><code class="hljs json">{
+  "response": {
+    "msg": "Invalid Request..Authorization Token required",
+    "success": false,
+    "result": null
+  },
+  "statusCode": 400
+}</code>
+</pre>
+            </div>
+        </div>
+    </li>
+</ul>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-error">Status 401 </span></b>
+        </span>
+        <div class="representation-doc"><b>Unauthorized Access</b> - No currently valid authorization has been made.</div>
+    </li>
+</ul>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-error">Status 403 </span></b>
+        </span>
+        <div class="representation-doc"><b>Forbidden Access</b> - Access to this service or resource is forbidden with the given authorization.</div>
+    </li>
+</ul>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-error">Status 404</span></b>
+        </span>
+        <div class="representation-doc"><b>Not Found</b> - Service or resource was not found</div>
+    </li>
+</ul>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-error">Status 500</span></b>
+        </span>
+        <div class="representation-doc"><b>System Error</b> - Specific reason is included in the error message</div>
+    </li>
+</ul>
+
+</div>

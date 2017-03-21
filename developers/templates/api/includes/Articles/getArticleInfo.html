@@ -1,0 +1,120 @@
+<p>
+    Get the list of Article
+</p>
+<h5>Responses</h5>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-success">Status 200</b>
+        
+        <div class="representation-doc">
+            <div class="representation-doc-block">
+                <p></p>
+                <h6>Example</h6>
+<pre><code class="hljs json">{
+"response": {
+  "result": [{
+      "article_id": 10,
+      "title": "Blog Title",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,Ut enim ad minim veniam, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      "date_created": "2016-06-27T07:47:23.000Z",
+      "date_implemented": "2016-06-30T06:43:30.000Z",
+      "is_active": 1,
+      "_id": "5423b306-3bf8-11e6-84ab-02fdd7effd2d",
+      "sp_id": 6,
+      "sub_id": 12,
+      "tags": [{
+          "tags_id": 17,
+          "tags": "Telco",
+          "date_created": "2016-06-30T14:43:29.000Z",
+          "_id": "f4c8969f-3e8d-11e6-84ab-02fdd7effd2d",
+          "article_id": 10
+      },
+      {...},
+      {...}],
+      "article_features": [{
+          "article_id": 10,
+          "bundle_id": 42,
+          "product_id": null,
+          "product_details": {},
+          "bundle_details": {
+            "pb_id": 42,
+            "bundle_name": "Eze Impress 48\" with Enhanced Media Player",
+            "bundle_description": "Enhanced digital signage with advanced and high definition media content for attraction, engagement and quick message recall",
+            "sell_price": 12,
+            "product_type_id": 22,
+            "bundle_code": "EzeImpress",
+            "bundle_brand": "Engagis",
+            "start_date": "2016-07-01T11:25:27.000Z",
+            "end_date": "2016-07-01T11:25:27.000Z",
+            "is_published": 1,
+            "is_archived": 0,
+            "date_created": "2016-07-01T19:26:01.000Z",
+            "_id": "975f0a35-3f7e-11e6-84ab-02fdd7effd2d"
+          }
+      },
+      {...},
+      {...}],
+      "mediafiles": [{
+          "media_name": "1466985068_hero1.png",
+          "media_path": "http://localhost:3000/public/uploads/articles/1466985068_hero1.png",
+          "media_mimetype": "image/png",
+          "media_filesize": "224300",
+          "_id": "deadd72b-3bf8-11e6-84ab-02fdd7effd2d",
+          "article_id": 10
+      },
+      {...},
+      {...}]
+  },
+  {...},
+  {...}],
+  "msg": "",
+  "success": true
+},
+"statusCode": 200
+}
+</code>
+</pre>
+            </div>
+        </div>
+    </li>
+</ul>
+<!-- FIXED RESPONSE -->
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-error">Status 400 </span></b>
+        </span>
+        <div class="representation-doc">
+            <b>Bad Request</b> - Request does not have a valid format, all required parameters, etc.
+        </div>
+    </li>
+</ul>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-error">Status 401 </span></b>
+        </span>
+        <div class="representation-doc"><b>Unauthorized Access</b> - No currently valid authorization has been made.</div>
+    </li>
+</ul>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-error">Status 403 </span></b>
+        </span>
+        <div class="representation-doc"><b>Forbidden Access</b> - Access to this service or resource is forbidden with the given authorization.</div>
+    </li>
+</ul>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-error">Status 404</span></b>
+        </span>
+        <div class="representation-doc"><b>Not Found</b> - Service or resource was not found</div>
+    </li>
+</ul>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-error">Status 500</span></b>
+        </span>
+        <div class="representation-doc"><b>System Error</b> - Specific reason is included in the error message</div>
+    </li>
+</ul>
+
+</div>

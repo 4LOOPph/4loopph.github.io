@@ -1,0 +1,84 @@
+<div class="container">
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Web Tracking
+                    <small>Measure user interaction with websites or web applications.</small>
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="" class="list-group-item" ui-sref="frontier-web">Overview</a>
+                <a href="" class="list-group-item active" ui-sref="frontier-web-install">Install</a>
+                <a href="" class="list-group-item" ui-sref="frontier-web-native">Native JS</a>
+                <a href="" class="list-group-item" ui-sref="frontier-web-angular">Angular JS</a>
+            </div>
+        </div>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <h1>Install</h1>
+            <hr>
+            <h4>Get the Source File</h4>
+            <p>You can use bower to install or download the zip file here, and locate the .js file in the dist folder:</p>
+            <h5>Native JS</h5>
+            <div class="well">
+                <kbd>bower install frontier</kbd>
+                <br>
+                <br>
+                <b>OR</b>
+                <br>
+                <br>
+                <kbd>npm i frontier</kbd>
+                <samp>(NPM Coming Soon..)</samp>
+                <br>
+                <br>
+                <b>OR via CDN</b>
+                <br>
+                <samp><code>&lt;script src="http://fourloopph.bitbucket.org/developers/bin/analytics/v1/js/frontier.min.js"&gt;</code><code>&lt;/script&gt;</code></samp>
+                <br>
+                <br>
+                <b>OR</b>
+                <br>
+                <samp><code>&lt;script src="bower_components/frontier/dist/frontier.min.js"&gt;</code><code>&lt;/script&gt;</code></samp>
+            </div>
+            <h5>Angular JS</h5>
+            <div class="well">
+                <kbd>bower install ng-frontier</kbd>
+                <br>
+                <br>
+                <b>OR</b>
+                <br>
+                <br>
+                <kbd>NPM i ng-frontier</kbd>
+                <samp>(Bower Coming Soon..)</samp>
+                <br>
+                <br>
+                <b>OR via CDN</b>
+                <br>
+                <samp><code>&lt;script src="http://fourloopph.bitbucket.org/developers/bin/analytics/v1/js/frontier.min.js"&gt;</code><code>&lt;/script&gt;</code></samp>
+                <br>
+                <samp><code>&lt;script src="http://fourloopph.bitbucket.org/developers/bin/analytics/v1/angular/ng-frontier.min.js"&gt;</code><code>&lt;/script&gt;</code></samp>
+                <br>
+                <br>
+                <b>OR</b>
+                <br>
+                <samp><code>&lt;script src="bower_components/frontier/dist/frontier.min.js"&gt;</code><code>&lt;/script&gt;</code></samp>
+                <br>
+                <samp><code>&lt;script src="bower_components/ng-frontier/dist/ng-frontier.min.js"&gt;</code><code>&lt;/script&gt;</code></samp>
+            </div>
+            <p>Include ng-frontier.js or ng-frontier.min.js in your index.html file after frontier.js and after your AngularJS file (since ngFrontier depends on AngularJS).</p>
+            <h5>Inject as an Angular dependency</h5>
+            <p>Then, include ngFrontier as a dependency in your angular module:</p>
+            <div class="well">
+                <samp>angular.module('sampleApp', ['ngFrontier'])</samp>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <hr>
+</div>

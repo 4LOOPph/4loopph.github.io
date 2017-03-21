@@ -1,0 +1,77 @@
+<p>
+    Creates a new session for a user in SYMPHONY. Once a session has been successfully created it can be used to access any of SYMPHONY's remote APIs and also the web UI by passing the appropriate HTTP Cookie header.
+</p>
+<p>
+    Note that it is generally preferrable to use HTTP BASIC authentication with the REST API. However, this resource may be used to mimic the behaviour of SYMPHONY's log-in page (e.g. to display log-in errors to a user).
+</p>
+<h5>Request</h5>
+<div class="representation-doc">
+    <div class="representation-doc-block">
+        <p>
+        </p>
+        <h6>Example</h6>
+        <pre><code class="hljs json">{
+    "username": "fred",
+    "password": "freds_password"
+}</code></pre>
+    </div>
+    <div class="representation-doc-block schema">
+        <p></p>
+        <h6>Schema<button class="expand"></button></h6>
+        <pre><code class="hljs json">{
+	"properties": {
+	    "username": {
+	      	"type": "string"
+		},
+	    "password": {
+	      	"type": "string"
+	    }
+	}
+}</code></pre>
+    </div>
+    <div class="representation"></div>
+</div>
+<h5>Responses</h5>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-success">Status 200</b>
+        
+        <div class="representation-doc">
+            Returns information about the user's session if the user is authenticated.
+            <div class="representation-doc-block">
+                <p></p>
+                <h6>Example</h6>
+<pre><code class="hljs json">{
+  "msg": "Login successfully",
+  "success": true,
+  "result": {
+    "user": {
+      "uc_id": 16,
+      "username": "TESSA LASTNAME",
+      "valid_until": null,
+      "effective_date": "2016-06-21T20:03:21.000Z",
+      "person_id": 34,
+      "is_active": 1,
+      "sub_id": 12,
+      "role_id": "",
+      "isOwner": 1,
+      "date_created": "2016-06-21T20:03:21.000Z",
+      "date_updated": null,
+      "_id": "26349836-37a8-11e6-b919-38c98626bd93",
+      "subscriptionKey": "jeJMH2vWAQocOrat0bu1yqLJg1X0xdYZ",
+      "company_name": "TESSA"
+    },
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9....."
+  }
+}</code>
+</pre>
+            </div>
+            <p>
+                Note that the response contains the <code>Set-Cookie</code> HTTP headers that <b>must</b> be honoured by the caller. If you are using a cookie-aware HTTP client then it will handle all <code>Set-Cookie</code> headers automatically. This is important because setting the <code>JSESSIONID</code> cookie alone may not be sufficient for the authentication to work.
+            </p>
+        </div>
+    </li>
+</ul>
+<!-- FIXED RESPONSE -->
+<api-response></api-response>
+</div>

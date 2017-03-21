@@ -1,0 +1,146 @@
+<header class="business-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="page-header" style="line-height:100px;">SYMPHONY REST API Reference</h2>
+                <h5>v1.0.0</h5>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container symphony" style="padding-top:50px;">
+    <!-- Page Heading/Breadcrumbs -->
+<!--     <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                SYMPHONY REST API Reference <br>
+                <small>v1.0.0</small>
+            </h1>
+        </div>
+    </div> -->
+    <!-- /.row -->
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <br>
+            <p>
+                Welcome to the Symphony REST API reference. This page documents the REST resources available in JIRA, along with expected HTTP response codes and sample requests. You can use the Symphony REST API to develop integrations between Symphony and other applications, or script interactions with Symphony.
+            </p>
+            <h4>Getting started</h4>
+            <p>
+                The best way to learn the Symphony REST API is to try it out. If you're using Symphony in the cloud, for a high level overview of the Symphony REST API in Symphony Server, start with the Symphony REST API home.
+            </p>
+            <h4>Authentication</h4>
+            <p>
+                Any authentication that works with Symphony will work with the REST API. The prefered authentication methods are OAuth (examples) and HTTP Basic (when using SSL), which are both documented in the Symphony REST API Tutorials. Other supported methods include HTTP Cookies and Trusted Applications. Symphony uses cookie-based authentication in the browser, so you can call REST from Javascript on the page and rely on the authentication that the browser has established. To reproduce the behavior of the Symphony log-in page (for example, to display authentication error messages to users) can POST to the /auth/1/session resource.
+            </p>
+            <div class="well">
+                <samp><code>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9..... (JWT token)</code></samp>
+            </div>
+            <h4>URI Structure</h4>
+            <p>
+                POS17's REST APIs provide access to resources (data entities) via URI paths. To use a REST API, your application will make an HTTP request and parse the response. The POS17 REST API uses JSON as its communication format, and the standard HTTP methods like GET, PUT, POST and DELETE (see API descriptions below for which methods are available for each resource). URIs for POS17's REST API resource have the following structure:
+            </p>
+            <div class="well">
+                <samp><code>http://host:port/context/rest/api-name/api-version/resource-name</code></samp>
+            </div>
+            <h4>Pagination</h4>
+            <p>Symphony uses pagination to limit the response size for resources that return a potentially large collection of items. A request to a paged API will result in a values array wrapped in a JSON object with some paging metadata, for example:</p>
+            <pre>
+{
+    "startAt" : 0,
+    "maxResults" : 10,
+    "total": 200,
+    "values": [
+        { /* result 0 */ },
+        { /* result 1 */ },
+        { /* result 2 */ }
+    ]
+}
+</pre>
+            <p>
+                Clients can use the "startAt" and "maxResults" parameters to retrieve the desired numbers of results.
+            </p>
+            <p>
+                The "maxResults" parameter indicates how many results to return per page. Each API may have a different limit for number of items returned.
+            </p>
+            <p>
+                The "startAt" parameter indicates which item should be used as the first item in the page of results.
+            </p>
+            <p>
+                Important: The response contains a "total" field which denotes the total number of entities contained in all pages. This number may change as the client requests the subsequent pages. A client should always assume that the requested page can be empty. REST API consumers should also consider the field to be optional. In cases, when calculating this value is too expensive we may not include this in response.
+            </p>
+            <h4>Ordering</h4>
+            <p>
+                Some resources support ordering by a specific field. Ordering request is provided in the orderBy query parameter. See the docs for specific methods to see which fields they support and if they support ordering at all.
+            </p>
+            <p>
+                Ordering can be ascending or descending. By default it's ascending. To specify the ordering use "-" or "+" sign. Examples:
+            </p>
+            <pre>
+?orderBy=name
+    Order by "name" ascending
+?orderBy=+name
+    Order by "name" ascending
+?orderBy=-name
+    Order by "name" descending
+</pre>
+            <h4>Special request and response headers</h4>
+            <ul>
+                <li>
+                    <b>AccessKey</b> - Response header which contains either username of the authenticated user or 'anonymous'.
+                </li>
+                <li>
+                    <b>AccessCode</b> - methods which accept multipart/form-data will only process requests with 'X-Atlassian-Token: no-check' header.
+                </li>
+                <li>
+                    <b>Auth_Token</b> - methods which accept multipart/form-data will only process requests with 'X-Atlassian-Token: no-check' header.
+                </li>
+            </ul>
+            <h4>Error responses</h4>
+            <p>
+                Most resources will return a response body in addition to the status code. Usually, the JSON schema of the entity returned is the following:
+            </p>
+            <pre>
+[
+  {param: "email", msg: "required", value: "<received input>"},
+  {param: "email", msg: "valid email required", value: "<received input>"},
+  {param: "password", msg: "6 to 20 characters required", value: "<received input>"}
+]</pre>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <h3>Resources 
+                <small>
+                    <a href="" class="expand-methods" ng-click="isResourced = !isResourced" ng-show="!isResourced"  ng-cloak>Expand all methods</a>
+                    <a href="" class="expand-methods" ng-click="isResourced = !isResourced" ng-show="isResourced"  ng-cloak>Hide all methods</a>
+                </small>
+            </h3>
+            <div class="resource" uib-collapse="!isResourced">
+                <h4>
+                    <a href="">api/1.0/session</a>
+                    <a href="" class="expand-methods" ng-click="apiSession = !apiSession" ng-show="!apiSession"  ng-cloak>Expand all methods</a>
+                    <a href="" class="expand-methods" ng-click="apiSession = !apiSession" ng-show="apiSession"  ng-cloak>Hide all methods</a>
+                </h4>
+                <p>Implement a REST resource for acquiring authorization and session cookie.</p>
+                <div class="methods" uib-collapse="!apiSession">
+                    <ng-include src="'./templates/api/includes/AuthSession/main.html'"></ng-include>
+                </div>
+            </div>
+            <div class="resource" uib-collapse="!isResourced">
+                <h4>
+                    <a href="">api/1.0/articleinfo</a>
+                    <a href="" class="expand-methods" ng-click="apiArticleInfo = !apiArticleInfo" ng-show="!apiArticleInfo"  ng-cloak>Expand all methods</a>
+                    <a href="" class="expand-methods" ng-click="apiArticleInfo = !apiArticleInfo" ng-show="apiArticleInfo"  ng-cloak>Hide all methods</a>
+                </h4>
+                <p>Implement a REST resource for Symphony's Article.</p>
+                <div class="methods" uib-collapse="!apiArticleInfo">
+                    <ng-include src="'./templates/api/includes/Articles/main.html'"></ng-include>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

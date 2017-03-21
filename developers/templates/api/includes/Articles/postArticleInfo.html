@@ -1,0 +1,68 @@
+<p>
+    Create an Article via POST
+</p>
+<h5>Request</h5>
+<div class="representation-doc">
+    <div class="representation-doc-block">
+        <p>
+        </p>
+        <h6>Example</h6>
+        <pre><code class="hljs json">{
+  "title": "string",
+  "description": "string",
+  "article": "string",
+  "date_implemented": "2016-08-25T11:41:43.373Z",
+  "is_active": 0,
+  "article_feature": [
+    {
+      "article_id": 0,
+      "bundle_id": 0,
+      "product_id": 0
+    }
+  ]
+}</code></pre>
+    </div>
+    <div class="representation-doc-block schema">
+        <p></p>
+        <h6>Schema<button class="expand"></button></h6>
+        <pre><code class="hljs json">{
+  "title": (string, optional),
+  "description": (string, optional),
+  "article": (string, optional),
+  "date_implemented": (string, optional),
+  "is_active": (integer, optional),Default:  0,
+  "article_feature": [ {
+      article_id (integer, optional),
+      bundle_id (integer, optional),
+      product_id (integer, optional)
+  }]
+}</code></pre>
+    </div>
+    <div class="representation"></div>
+</div>
+<h5>Responses</h5>
+<ul>
+    <li class="representation">
+        <span class="representation-name"><b><span class="aui-lozenge aui-lozenge-success">Status 200</b>
+
+        <div class="representation-doc">
+            Returns information about the user's session if the user is authenticated.
+            <div class="representation-doc-block">
+                <p></p>
+                <h6>Example</h6>
+<pre><code class="hljs json">{
+  "msg": "Login successfully",
+  "success": true,
+  "result": {}
+}</code>
+</pre>
+            </div>
+            <p>
+                Note that the response contains the <code>Set-Cookie</code> HTTP headers that <b>must</b> be honoured by the caller. If you are using a cookie-aware HTTP client then it will handle all <code>Set-Cookie</code> headers automatically. This is important because setting the <code>JSESSIONID</code> cookie alone may not be sufficient for the authentication to work.
+            </p>
+        </div>
+    </li>
+</ul>
+<!-- FIXED RESPONSE -->
+<api-response></api-response>
+</div>

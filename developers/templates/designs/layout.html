@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Layout</h2>
+            <ol class="breadcrumb">
+                <li><a ui-sref="design">Design</a>
+                </li>
+                <li class="active">Layout</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="" class="list-group-item" ng-class="{'active': principles}" ng-click="showDisplay('principles')">Principles</a>
+                <a href="" class="list-group-item" ng-class="{'active': units}" ng-click="showDisplay('units')">Units and measurements</a>
+                <a href="" class="list-group-item" ng-class="{'active': metrics}">Metrics & keylines</a>
+                <a href="" class="list-group-item" ng-class="{'active': structure}">Structure</a>
+                <a href="" class="list-group-item" ng-class="{'active': responsive}">Responsive UI</a>
+            </div>
+        </div>
+        <!-- Content Column -->
+        <div class="col-md-9">
+            <div ng-include="'./templates/designs/layout-principles.html'" ng-show="principles"></div>
+            <div ng-include="'./templates/designs/layout-units.html'" ng-show="units"></div>
+        </div>
+    </div>
+</div>
